@@ -1,0 +1,150 @@
+1. Understanding and using of commands like ifconfig, netstat, ping, arp, telnet, ftp, finger,
+traceroute, whois etc. Usage of elementary socket system calls (socket (), bind(), listen(),
+accept(),connect(),send(),recv(),sendto(),recvfrom()).
+Program Objective:
+Understanding and using of commands like ifconfig, netstat, ping, arp, telnet, ftp, finger,
+traceroute, whois
+Program Description:
+UNIX utilities are commands that, generally, perform a single task. It may be as simple as printing
+the date and time, or a complex as finding files that match many criteria throughout a directory
+hierarchy
+IFCONFIG
+The Unix command ifconfig (short for interface configurator) serves to configure and control
+TCP/IP network interfaces from a command line interface (CLI).
+Common uses for ifconfig include setting an interface's IP address and netmask, and disabling or
+enabling a given interface.
+Ipconfig is an MS-DOS utility that can be used from MS-DOS and an MS-DOS shell to display
+the network settings currently assigned and given by a network. This command can be utilized to
+verify a network connection as well as to verify your network settings.
+Syntax: ipconfig [/allcompartments] [/? | /all | /renew [adapter] | /release [adapter] | /renew6
+[adapter] | /release6 [adapter] | /flushdns | /displaydns | /registerdns | /showclassid adapter |
+/setclassid adapter [classid] | /showclassid6 adapter | /setclassid6 adapter [classid] ]
+Example: ipconfig /all
+Output:
+
+NETSTAT
+netstat (network statistics) is a command-line tool that displays network connections (both
+incoming and outgoing), routing tables, and a number of network interface statistics.
+It is used for finding problems in the network and to determine the amount of traffic on the network
+as a performance measurement.
+Parameters
+Parameters used with this command must be prefixed with a hyphen (-) rather than a slash (/).
+-a : Displays all active TCP connections and the TCP and UDP ports on which the computer is
+listening.
+-e : Displays ethernet statistics, such as the number of bytes and packets sent and received. This
+parameter can be combined with -s.
+-f : Displays fully qualified domain names <FQDN> for foreign addresses.
+-i : Displays network interfaces and their statistics (not available under Windows)
+-n : Displays active TCP connections, however, addresses and port numbers are expressed
+numerically and no attempt is made to determine names.
+-o : Displays active TCP connections and includes the process ID (PID) for each connection.
+-p Linux: Process : Show which processes are using which sockets
+Syntax: NETSTAT [-a] [-b] [-e] [-f] [-n] [-o] [-p proto] [-r] [-s] [-x] [-t] [interval]
+Output:
+
+PING
+Ping is a computer network tool used to test whether a particular host is reachable across an IP
+network; it is also used to self test the network interface card of the computer, or as a speed test. It
+works by sending ICMP “echo request” packets to the target host and listening for ICMP “echo
+response” replies. Ping does not estimate the round-trip time, as it does not factor in the user's
+connection speed, but instead is used to record any packet loss, and print a statistical summary
+when finished.
+The word ping is also frequently used as a verb or noun, where it is usually incorrectly used to
+refer to the round-trip time, or measuring the round-trip time.
+Syntax: ping [-t] [-a] [-n count] [-l size] [-f] [-i TTL] [-v TOS] [-r count] [-s count] [[-j host-list] |
+[-k host-list]] [-w timeout] [-R] [-S srcaddr] [-4] [-6 target_name]
+Output:
+
+ARP
+In computer networking, the Address Resolution Protocol (ARP) is the method for finding a
+host's link layer (hardware) address when only its Internet Layer (IP) or some other Network Layer
+address is known.
+ARP has been implemented in many types of networks; it is not an IP-only or Ethernet-only
+protocol. It can be used to resolve many different network layer protocol addresses to interface
+hardware addresses, although, due to the overwhelming prevalence of IPv4 and Ethernet, ARP is
+primarily used to translate IP addresses to Ethernet MAC addresses.
+Arp syntax:
+
+ARP -s inet_addr eth_adr [if_addr]
+ARP -d inet_addr [if_addr]
+ARP -a [inet_addr] [-N if_addr]
+Example: arp -a
+Output:
+
+TELNET
+Telnet (Telecommunication network) is a network protocol used on the Internet or local area
+network (LAN) connections.
+Typically, telnet provides access to a command-line interface on a remote machine.
+The term telnet also refers to software which implements the client part of the protocol. Telnet
+clients are available for virtually all platforms
+Protocol details:
+Telnet is a client-server protocol, based on a reliable connection-oriented transport. Typically this
+protocol is used to establish a connection to TCP port 23
+Syntax: telnet [-468ELadr] [-S tos] [-b address] [-e escapechar] [-l user] [-n tracefile] [host [port]]
+Example: telnet myhost.com
+
+FTP
+File Transfer Protocol (FTP):
+FTP is a network protocol used to transfer data from one computer to another through a network
+such as the Internet.FTP is a file transfer protocol for exchanging and manipulating files over a
+TCP computer network. An FTP client may connect to an FTP server to manipulate files on that
+server.FTP runs over TCP. It defaults to listen on port 21 for incoming connections from FTP
+clients. A connection to this port from the FTP Client forms the control stream on which commands
+are passed from the FTP client to the FTP server and on occasion from the FTP server to the FTP
+client. FTP uses out-of-band control, which means it uses a separate connection for control and
+data. Thus, for the actual file transfer to take place, a different connection is required which is
+called the data stream.
+Syntax: ftp [-46pinegvd] [host [port]]
+Example: ftp exampleftp.computerhope.com
+
+FINGER:
+In computer networking, the Name/Finger protocol and the Finger user information protocol
+are simple network protocols for the exchange of human-oriented status and user information.
+finger looks up and displays information about system users.
+Syntax: finger [-lmsp] [user ...] [user@host ...]
+Example: finger -p ch
+
+TRACEROUTE:
+traceroute is a computer network tool used to determine the route taken by packets across an IP
+network . An IPv6 variant, traceroute6, is also widely available.Traceroute is often used for
+network troubleshooting. By showing a list of routers traversed, it allows the user to identify the
+path taken to reach a particular destination on the network. This can help identify routing problems
+or firewalls that may be blocking access to a site. Traceroute is also used by penetration testers to
+gather information about network infrastructure and IP ranges around a given host. It can also be
+used when downloading data, and if there are multiple mirrors available for the same piece of data,
+one can trace each mirror to get a good idea of which mirror would be the fastest to use.
+Syntax: traceroute [-46dFITUnreAV] [-f first_ttl] [-g gate,...] [-i device]
+[-m max_ttl] [-p port] [-s src_addr] [-q nqueries]
+[-N squeries] [-t tos] [-l flow_label] [-w waittime]
+[-z sendwait] [-UL] [-D] [-P proto] [--sport=port] [-M method]
+
+[-O mod_options] [--mtu] [--back] host [packet_len]
+Example: traceroute www.google.com
+
+WHO IS:
+WHOIS (pronounced "who is"; not an acronym) is a query/response protocol which is widely
+used for querying an official database in order to determine the owner of a domain name, an IP
+address, or an autonomous system number on the Internet. WHOIS lookups were traditionally
+made using a command line interface, but a number of simplified web-based tools now exist for
+looking up domain ownership details from different databases. WHOIS normally runs on TCP port
+43.
+The WHOIS system originated as a method that system administrators could use to look up
+information to contact other IP address or domain name administrators (almost like a "white
+pages").
+Syntax: whois [ -h HOST ] [ -p PORT ] [ -aCFHlLMmrRSVx ] [ -g SOURCE:FIRST-LAST ] [ -i
+ATTR ] [ -S SOURCE ] [ -T TYPE ] object
+Example: whois www.google.com
+socket
+To do network I/O, the first thing a process must do is to call the socket system call, specifying
+the type of communication protocol desired.
+
+#include <sys/types.h>
+#include <sys/socket.h>
+
+int socket(int family, int type, int protocol);
+The family is one of
+AF_UNIX -- Unix internal protocols
+AF_INET -- Internet protocols
+AF_NS -- Xerox NS Protocols
+AF_IMPLINK-- IMP link layer
+The AF_ prefix stands for "address family." In the first project, we are going to use AF_INET.
